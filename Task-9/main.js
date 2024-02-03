@@ -1,25 +1,22 @@
-class FilterArrays {
+class NumberFilter {
+    i;
 
-    inputNumbers;
-    resultFilter;
+    filterNumbers() {
+        this.i = []
+        for( let i = 0; i <= 100; i++) {
+            if(i % 3 === 0 || i % 5 === 0) {
+                this.i.push(i)
+            }
+        }
 
-   constructor(numbers) {
-    this.inputNumbers = numbers
-   }
+        return this.i
+    }
 
-   filter() {
-        return this.inputNumbers.filter(number => (number % 3 === 0 || number % 5 === 0 || number % 7 ===0))
-   }
-
-   print() {
-    this.resultFilter = this.filter()
-    console.log(this.resultFilter)
-   }
-
-
+    print() {
+        const filteredNumbers = this.filterNumbers
+        console.log(this.filterNumbers)
+    }
 }
 
-
-const inputNumbers = [1,2,3,4,5,6,7,8,9,10,11]
-const resultArrays = new FilterArrays(inputNumbers)
-resultArrays.print()
+const filters = new NumberFilter
+filters.print()
