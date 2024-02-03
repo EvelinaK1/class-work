@@ -1,22 +1,23 @@
-class NumberFilter {
-    i;
+class ArraySum {
+    constructor(numbers) {
+        this.imputNumbers = numbers
+    }
 
-    filterNumbers() {
-        this.i = []
-        for( let i = 0; i <= 100; i++) {
-            if(i % 3 === 0 || i % 5 === 0) {
-                this.i.push(i)
-            }
+    calculateSum() {
+        let sum = 0
+        for( let i = 0; i <= this.imputNumbers.lenght; i++ ) {
+            sum +- this.imputNumbers[i]
         }
 
-        return this.i
+        return sum
     }
 
     print() {
-        const filteredNumbers = this.filterNumbers
-        console.log(this.filterNumbers)
+        const sum = this.calculateSum
+        console.log(sum)
     }
 }
 
-const filters = new NumberFilter
-filters.print()
+const inputNumbers = [1,2,3,4,5,6,7,8,9]
+const result = new ArraySum(inputNumbers)
+result.print();
